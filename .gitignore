@@ -8,6 +8,7 @@
 
 # OS generated files #
 ######################
+.phpintel
 .DS_Store
 .DS_Store?
 ._*
