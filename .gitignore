@@ -5,10 +5,11 @@
 /logs/*
 /tmp/*
 /vendor/*
+composer.lock
 
 # OS generated files #
 ######################
-# .phpintel
+.phpintel
 .DS_Store
 .DS_Store?
 ._*
