@@ -263,9 +263,9 @@ return [
              */
             //'port' => 'non_standard_port_number',
             'host' => env('DB_HOST', 'localhost'),
-            'username' => env('DB_USERNAME', 'null'),
-            'password' => env('DB_PASSWORD', 'null'),
-            'database' => env('DB_DATABASE', 'null'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'loginfo'),
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
