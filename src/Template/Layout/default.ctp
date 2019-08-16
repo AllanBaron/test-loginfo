@@ -1,57 +1,80 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
-?>
 <!DOCTYPE html>
-<html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+<html lang="pt-BR">
+    <head>
+        <?= $this->Html->charset() ?>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            <?= $this->fetch('title') ?>
+        </title>
+        <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <?= $this->Html->css('style.css') ?>
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
-<body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
+        <?= $this->fetch('meta') ?>
+        <?= $this->fetch('css') ?>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <ul id="slide-out" class="sidenav sidenav-fixed">
+                <li>
+                    <div class="sidenav-logo"></div>
+                </li>
+                <li><div class="divider"></div></li>
+                <li>
+                    <a class="waves-effect" href="<?= $this->Url->build('/'); ?>">
+                        <i class="material-icons">home</i>Home
+                    </a>
+                </li>
+                <li>
+                    <a class="waves-effect" href="<?= $this->Url->build('/itens/add'); ?>">
+                        <i class="material-icons">add</i>Novo Item
+                    </a>
+                </li>
+                <li>
+                    <a class="waves-effect" href="#">
+                        <i class="material-icons">exit_to_app</i>Sair
+                    </a>
+                </li>
             </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
-</body>
+            <nav>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <div class="breadcrumb-container" typeof="BreadcrumbList" vocab="http://schema.org/">
+                    <span class="breadcrumb" property="itemListElement" typeof="ListItem">
+                        <a href="<?= $this->Url->build('/'); ?>" property="item" typeof="WebPage" itemprop="url">
+                            <span property="name">Home</span>
+                        </a>
+                    </span> 
+                    <span class="breadcrumb" property="itemListElement" typeof="ListItem">
+                        <span property="name">Itens</span>
+                    </span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <?= $this->Flash->render() ?>
+            <?= $this->fetch('content') ?>
+        </main>
+               
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            });
+        </script>
+    
+        <?= $this->fetch('script') ?>
+    </body>
 </html>
