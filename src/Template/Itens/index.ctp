@@ -1,6 +1,6 @@
 <section class="container">
     <div class="row">
-        <h3><?= __('Itens') ?></h3>
+        <h1><?= __('Itens Cadastrados') ?></h1>
         <table class="striped highlight centered responsive-table">
             <thead>
                 <tr>
@@ -16,20 +16,20 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($itens as $iten): ?>
+                <?php foreach ($itens as $item): ?>
                 <tr>
-                    <td><?= $this->Number->format($iten->id) ?></td>
-                    <td><?= h($iten->name) ?></td>
-                    <td><?= h($iten->unit_measurement) ?></td>
-                    <td><?= $this->Number->format($iten->qtd) ?></td>
-                    <td><?= $this->Number->format($iten->price) ?></td>
-                    <td><?= h($iten->perishable_product) ?></td>
-                    <td><?= h($iten->expiry_date) ?></td>
-                    <td><?= h($iten->date_manufacture) ?></td>
+                    <td><?= $this->Number->format($item->id) ?></td>
+                    <td><?= h($item->name) ?></td>
+                    <td><?= h($item->unit_measurement) ?></td>
+                    <td><?= $this->Number->format($item->qtd) ?></td>
+                    <td><?= $this->Number->format($item->price) ?></td>
+                    <td><?= h($item->perishable_product) ?></td>
+                    <td><?= h($item->expiry_date) ?></td>
+                    <td><?= h($item->date_manufacture) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link('visibility', ['action' => 'view', $iten->id], ['class' => 'material-icons']) ?>
-                        <?= $this->Html->link('edit', ['action' => 'edit', $iten->id], ['class' => 'material-icons']) ?> 
-                        <?= $this->Form->postLink('delete_forever', ['action' => 'delete', $iten->id], ['class' => 'material-icons', 'confirm' => __("Tem certeza de que deseja excluir esse item?", $iten->id)]) ?>                    
+                        <?= $this->Html->link('visibility', ['action' => 'view', $item->id], ['class' => 'material-icons']) ?>
+                        <?= $this->Html->link('edit', ['action' => 'edit', $item->id], ['class' => 'material-icons']) ?> 
+                        <?= $this->Form->postLink('delete_forever', ['action' => 'delete', $item->id], ['class' => 'material-icons', 'confirm' => __("Tem certeza de que deseja excluir esse item?", $item->id)]) ?>                    
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -43,7 +43,7 @@
                 <?= $this->Paginator->next(__('Próximo') . ' >') ?>
                 <?= $this->Paginator->last(__('Último') . ' >>') ?>
             </ul>
-            <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registros de {{count}} no total')]) ?></p>
+            <?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registros de {{count}} no total')]) ?>
         </div>
     </div>
 </div>
