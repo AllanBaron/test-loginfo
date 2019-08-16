@@ -75,6 +75,10 @@ table.highlight > tbody > tr:hover {
 	background-color: #0f7ae5;
 }
 
+.btn.waves-effect {
+	background-color: #0f7ae5;
+}
+
 @media only screen and (min-width: 993px) {
 	.container {
 		width: 85%;

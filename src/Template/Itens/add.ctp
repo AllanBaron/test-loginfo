@@ -11,11 +11,11 @@
             </div>
             <div class="input-field">
                 <label for="qtd">Quantidade</label>
-                <?= $this->Form->text('qtd', ['id' => "qtd"]) ?>
+                <?= $this->Form->text('qtd', ['id' => "qtd", "class" => "number"]) ?>
             </div>
             <div class="input-field">
                 <label for="price">Preço</label>
-                <?= $this->Form->text('price', ['id' => "price"]) ?>
+                <?= $this->Form->text('price', ['id' => "price", 'class' => 'number']) ?>
             </div>
             <div class="margin-bottom">
                 <label>
@@ -25,11 +25,11 @@
             </div>
             <div class="input-field">
                 <label for="expiry_date">Data de validade</label>
-                <?= $this->Form->text('expiry_date', ['id' => 'expiry_date', 'class' => 'datepicker']) ?>
+                <?= $this->Form->text('expiry_date', ['id' => 'expiry_date', 'class' => 'datepicker date']) ?>
             </div>
             <div class="input-field">
                 <label for="date_manufacture">Data de fabricação</label>
-                <?= $this->Form->text('date_manufacture', ['id' => 'date_manufacture', 'class' => 'datepicker']) ?>
+                <?= $this->Form->text('date_manufacture', ['id' => 'date_manufacture', 'class' => 'datepicker date']) ?>
             </div>
 
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -43,8 +43,7 @@
 <script>
     $(document).ready(function() {
         var $input = $('.datepicker').datepicker({
-            // format:'dd/mm/yyyy',
-            format: 'yyyy-mm-dd',
+            format:'dd-mm-yyyy',
             i18n:{
                 months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                 monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],

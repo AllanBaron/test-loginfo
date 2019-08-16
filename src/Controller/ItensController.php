@@ -40,13 +40,14 @@ class ItensController extends AppController
         $item = $this->Itens->newEntity();
        
         if ($this->request->is('post')) {
-            // $expiryDate = date("d-m-Y", strtotime($this->request->getData()['expiry_date']));
-            // $dateManufacture = date("d-m-Y", strtotime($this->request->getData()['date_manufacture']));
-            // $newItem = $this->request->getData(); 
-            // $newItem["expiry_date"] = $expiryDate;
-            // $newItem["date_manufacture"] = $dateManufacture;
-
-            $item = $this->Itens->patchEntity($item, $this->request->getData());
+            $newItem = $this->request->getData(); 
+            $expiryDate = date("Y-m-d", strtotime($newItem['expiry_date']));
+            $dateManufacture = date("Y-m-d", strtotime($newItem['date_manufacture']));
+            
+            $newItem["expiry_date"] = $expiryDate;
+            $newItem["date_manufacture"] = $dateManufacture;
+    
+            $item = $this->Itens->patchEntity($item, $newItem);
             
             if ($this->Itens->save($item)) {
                 $this->Flash->success(__('O item foi salvo!'));
@@ -66,7 +67,14 @@ class ItensController extends AppController
         $item = $this->Itens->get($id, ['contain' => []]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $item = $this->Itens->patchEntity($item, $this->request->getData());
+            $newItem = $this->request->getData(); 
+            $expiryDate = date("Y-m-d", strtotime($newItem['expiry_date']));
+            $dateManufacture = date("Y-m-d", strtotime($newItem['date_manufacture']));
+            
+            $newItem["expiry_date"] = $expiryDate;
+            $newItem["date_manufacture"] = $dateManufacture;
+    
+            $item = $this->Itens->patchEntity($item, $newItem);
             
             if ($this->Itens->save($item)) {
                 $this->Flash->success(__('O item foi salvo!'));

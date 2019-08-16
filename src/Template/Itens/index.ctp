@@ -22,8 +22,8 @@
                     <td><?= h($item->name) ?></td>
                     <td><?= h($item->unit_measurement) ?></td>
                     <td><?= $this->Number->format($item->qtd) ?></td>
-                    <td><?= $this->Number->format($item->price) ?></td>
-                    <td><?= h($item->perishable_product) ?></td>
+                    <td>R$ <?= $this->Number->format($item->price) ?></td>
+                    <td><?= $item->perishable_product ? __('Sim') : __('Não') ?></td>
                     <td><?= h($item->expiry_date) ?></td>
                     <td><?= h($item->date_manufacture) ?></td>
                     <td class="actions">
