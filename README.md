@@ -25,7 +25,7 @@ composer install
 
 4. Com o projeto baixado, duplique os arquivo `.env.default` para `.env` e `app.default.php` para `app.php`.
 
-5. No arquivo `.env` adicione as informações de DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD para conexão como o banco de dados.
+5. No arquivo `.env` adicione as informações de `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` para conexão como o banco de dados.
 
 6. Como o Banco de Dados conectado, execute o comando `migration`:
 

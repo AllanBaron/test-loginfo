@@ -43,7 +43,7 @@ class Itens extends AbstractMigration
         // Perishable Product
         $table->addColumn('perishable_product', 'boolean', [
             'default' => null,
-            'null' => false,
+            'null' => true,
         ]);
 
         // Expiry Date
