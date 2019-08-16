@@ -54,7 +54,7 @@ class ItensSeed extends AbstractSeed
                 'modified' => date('Y-m-d H:i:s'),
             ],
             [
-                'name' => 'Feijão',
+                'name' => 'Batata',
                 'unit_measurement' => 'kg',
                 'qtd' => 80,
                 'price' => 5.50,
@@ -63,44 +63,8 @@ class ItensSeed extends AbstractSeed
                 'date_manufacture' => date('Y-m-d'),
                 'created' => date('Y-m-d H:i:s'),
                 'modified' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'name' => 'Carne',
-                'unit_measurement' => 'kg',
-                'qtd' => 10,
-                'price' => 22,90,
-                'perishable_product' => true,
-                'expiry_date' => date('Y-m-d'),
-                'date_manufacture' => date('Y-m-d'),
-                'created' => date('Y-m-d H:i:s'),
-                'modified' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'name' => 'Pote',
-                'unit_measurement' => 'Uni.',
-                'qtd' => 50,
-                'price' => 29.90,
-                'perishable_product' => false,
-                'expiry_date' => null,
-                'date_manufacture' => date('Y-m-d'),
-                'created' => date('Y-m-d H:i:s'),
-                'modified' => date('Y-m-d H:i:s'),
             ]
         ];
-
-        for ($i = 0; $i < 100; $i++) {
-            $data[] = [
-                'name' => 'Banana',
-                'unit_measurement' => 'kg',
-                'qtd' => 50,
-                'price' => 2.99,
-                'perishable_product' => true,
-                'expiry_date' => date('Y-m-d'),
-                'date_manufacture' => date('Y-m-d'),
-                'created' => date('Y-m-d H:i:s'),
-                'modified' => date('Y-m-d H:i:s'),
-            ];
-        }
 
         $table = $this->table('itens');
         $table->insert($data)->save();
